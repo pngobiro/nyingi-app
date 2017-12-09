@@ -90,8 +90,8 @@ class  PlotsAdapter(private var list: ArrayList<Plot>, val listener: (Plot) -> U
     }
 
 
-    fun filterList(filterdPlot: ArrayList<Plot>) {
-        this.list = filterdPlot
+    fun filterList(filteredPlot: ArrayList<Plot>) {
+        this.list = filteredPlot
         notifyDataSetChanged()
     }
 

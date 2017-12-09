@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.MenuItem
 import android.widget.SearchView
 import android.widget.Toast
@@ -15,6 +16,7 @@ import com.ngobiro.biroproperties.data.Plot
 import com.parse.*
 import kotlinx.android.synthetic.main.activity_list_location_plots.*
 import org.jetbrains.anko.indeterminateProgressDialog
+import org.jetbrains.anko.AnkoLogger
 import java.lang.Double
 import java.text.DecimalFormat
 import java.util.*
@@ -55,9 +57,9 @@ class ListLocationPlotsActivity : AppCompatActivity() ,  (Plot) -> Unit {
 
             override fun onQueryTextChange(p0: String?): Boolean {
 
-                filter(p0)
+                filter(p0?.toInt()!!)
 
-                return false
+                return true
             }
 
 
@@ -158,16 +160,22 @@ class ListLocationPlotsActivity : AppCompatActivity() ,  (Plot) -> Unit {
 
 
 
-    private fun filter(price: String?) {
-        val filterdPlots = java.util.ArrayList<Plot>()
+    private fun filter(price: Int) {
+        val filteredPlots = java.util.ArrayList<Plot>()
+
 
         for (s in this!!. plotList!!) {
-            if (s.price?.toInt() == price?.toInt()) {
-                filterdPlots.add(s)
+            s.intergerPrice = s.price?.toInt()
+
+            Log.i("Integerprice","${s.intergerPrice}")
+
+            if (s.intergerPrice!! <= price)   {
+                filteredPlots.add(s)
             }
         }
-        adapter?.filterList(filterdPlots)
+        adapter?.filterList(filteredPlots)
     }
+
 
 
 
