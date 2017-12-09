@@ -30,30 +30,12 @@ var selectedRequestedCallback:String? = ""
 class DisplayActiveCallbacksActivity : AppCompatActivity() , (PlotCallback) -> Unit {
 
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val menuInflater = menuInflater
-        menuInflater.inflate(R.menu.manage_plot, menu)
-
-
-        return super.onCreateOptionsMenu(menu)
-    }
-
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
-        if (item?.itemId == R.id.add_plot) {
-            var intent = Intent(this, AddNewPlotActivity::class.java)
-
-            startActivity(intent)
+        if (item?.itemId == android.R.id.home) {
+            finish()
         }
 
-        if (item?.itemId == R.id.log_out) {
-            ParseUser.logOut()
-
-            val builder = ParseLoginBuilder(this)
-            startActivityForResult(builder.build(), 0)
-
-
-        }
 
 
 
@@ -79,6 +61,10 @@ class DisplayActiveCallbacksActivity : AppCompatActivity() , (PlotCallback) -> U
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_active_callbacks)
+        supportActionBar?.setTitle("Active Calls")
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
 
 
 

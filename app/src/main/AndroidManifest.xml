@@ -161,7 +161,8 @@
         <activity
             android:name=".activities.DisplaySelectedPlotVideoActivity"
             android:label="Display Selected Plot Video" />
-        <activity android:name=".activities.RemovePlotImagesActivity"></activity>
+        <activity android:name=".activities.RemovePlotImagesActivity" />
+        <activity android:name=".activities.StatisticsViewActivity"></activity>
     </application>
 
 </manifest>

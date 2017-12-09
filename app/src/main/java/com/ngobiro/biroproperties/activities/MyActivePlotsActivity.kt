@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.SearchView
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -12,6 +13,7 @@ import com.ngobiro.biroproperties.R
 import com.ngobiro.biroproperties.adapters.PlotsAdapter
 import com.ngobiro.biroproperties.data.ExtraFun
 import com.ngobiro.biroproperties.data.Plot
+import com.ngobiro.biroproperties.data.Town
 import com.parse.*
 import com.parse.ui.ParseLoginBuilder
 import kotlinx.android.synthetic.main.activity_my_active_plots.*
@@ -29,6 +31,30 @@ class MyActivePlotsActivity : AppCompatActivity() ,  (Plot) -> Unit {
         selected_plot_id = plot.objectId
         selected_plot_title = plot.title
         startActivity(intent)
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val menuInflater = menuInflater
+        menuInflater.inflate(R.menu.search, menu)
+
+        var searchItem : MenuItem? = menu?.findItem(R.id.action_search)
+        var searchView : SearchView = searchItem?.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+
+                filter(newText)
+
+                return true
+            }
+        })
+
+
+
+        return super.onCreateOptionsMenu(menu)
     }
 
     private var adapter: PlotsAdapter? = null
@@ -108,6 +134,18 @@ class MyActivePlotsActivity : AppCompatActivity() ,  (Plot) -> Unit {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+
+    private fun filter(text: String) {
+        val filteredPlots =  ArrayList<Plot>()
+
+        for (s in this!!. my_activeplotsList!!) {
+            if (s.title?.toLowerCase()?.contains(text.toLowerCase())!!) {
+                filteredPlots.add(s)
+            }
+        }
+        adapter?.filterList(filteredPlots)
     }
 
 }

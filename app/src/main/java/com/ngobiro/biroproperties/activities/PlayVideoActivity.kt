@@ -55,13 +55,7 @@ class PlayVideoActivity : AppCompatActivity() {
 
 
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val menuInflater = menuInflater
-        menuInflater.inflate(R.menu.plot_details, menu)
 
-
-        return super.onCreateOptionsMenu(menu)
-    }
 
 
 
@@ -70,11 +64,6 @@ class PlayVideoActivity : AppCompatActivity() {
             finish()
         }
 
-        if (item.itemId == R.id.view_plot_map) {
-            var intent = Intent(this,DisplayMapActivity::class.java)
-            startActivity(intent)
-
-        }
 
         return true
     }

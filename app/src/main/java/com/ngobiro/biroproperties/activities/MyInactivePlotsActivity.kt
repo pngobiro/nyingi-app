@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.SearchView
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -29,6 +30,30 @@ class MyInactivePlotsActivity : AppCompatActivity() ,  (Plot) -> Unit {
         selected_plot_id = plot.objectId
         selected_plot_title = plot.title
         startActivity(intent)
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val menuInflater = menuInflater
+        menuInflater.inflate(R.menu.search, menu)
+
+        var searchItem : MenuItem? = menu?.findItem(R.id.action_search)
+        var searchView : SearchView = searchItem?.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+
+                filter(newText)
+
+                return true
+            }
+        })
+
+
+
+        return super.onCreateOptionsMenu(menu)
     }
 
 
@@ -113,6 +138,17 @@ class MyInactivePlotsActivity : AppCompatActivity() ,  (Plot) -> Unit {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun filter(text: String) {
+        val filterdPlots =  ArrayList<Plot>()
+
+        for (s in this!!. my_inactiveplotsList!!) {
+            if (s.title?.toLowerCase()?.contains(text.toLowerCase())!!) {
+                filterdPlots.add(s)
+            }
+        }
+        adapter?.filterList(filterdPlots)
     }
 
 
