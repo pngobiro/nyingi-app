@@ -1,5 +1,7 @@
 Todo List
 ========================
+App Deadline 31,December, 2017
+
 1. Add search box  on county list
 2. Add search on Locations list  
 3. Add search by price on plots list
@@ -9,4 +11,4 @@ Todo List
 7. implement edit plot details
 8. implement plots statistics
 9. implement manage users,locations, inactive callbacks
-10.implement share app  with friend module -  send sms to selected friends in contacts lists
+10. implement share app  with friend module -  send sms to selected friends in contacts lists
