@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "903896145781",
+    "firebase_url": "https://biro-d4623.firebaseio.com",
+    "project_id": "biro-d4623",
+    "storage_bucket": "biro-d4623.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903896145781:android:41a37cdd94cdd1cd",
+        "android_client_info": {
+          "package_name": "com.ngobiro.biroproperties"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903896145781-q0coon2ouu5su7fa9qfe24o34vv5jhfb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpIF5W6SGmNTm9cCOu0FzvnHWT172GDZ0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

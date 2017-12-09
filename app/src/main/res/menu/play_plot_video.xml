@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".activities.PlotDetailsActivity">
+        <item
+            android:id="@+id/view_plot_video"
+            android:title="Video"
+            android:icon="@drawable/ic_action_webcam"
+            app:showAsAction="ifRoom|withText">
+        </item>
+
+</menu>

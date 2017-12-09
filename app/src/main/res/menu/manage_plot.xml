@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/add_plot"
+    android:title="Add Plot"
+    app:showAsAction="always|withText"
+    android:icon="@drawable/ic_action_add">
+</item>
+    <item
+        android:id="@+id/log_out"
+        app:showAsAction="always|withText"
+        android:title="Log Out"
+        android:icon="@drawable/ic_action_log_out">
+    </item>
+
+    <item
+        android:id="@+id/view_active_plot"
+        app:showAsAction="always|withText"
+        android:title="Active Plots"
+        android:icon="@drawable/ic_action_active_plots">
+    </item>
+
+    <item
+        android:id="@+id/view_callbacks"
+        app:showAsAction="always|withText"
+        android:title="CallBacks"
+        android:icon="@drawable/ic_action_callbacks">
+    </item>
+
+    <item
+        android:id="@+id/admin_home"
+        app:showAsAction="always|withText"
+        android:title="Admin Home"
+        android:icon="@drawable/ic_action_admin_home">
+    </item>
+</menu>
