@@ -8,5 +8,5 @@ Todo List
 6. Categorize Active Plot by Location
 7. implement edit plot details
 8. implement plots statistics
-9. implement manage users , locations, inactive callbacks
-10. implement share app with fried-  send sms to selected friends in contacts lists
+9. implement manage users,locations, inactive callbacks
+10.implement share app  with friend module -  send sms to selected friends in contacts lists
